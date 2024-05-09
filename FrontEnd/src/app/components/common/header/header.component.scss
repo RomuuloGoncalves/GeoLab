@@ -1,0 +1,24 @@
+ion-header {
+  background-color: var(--ion-color-primary);
+  color: var(--ion-color-tertiary);
+  ion-toolbar {
+    padding: 10px 10px;
+  }
+
+  ion-list{
+    ion-label{
+      font-size: 1.3rem;
+    }
+  }
+
+  &.header__principal {
+    padding: 5px 5px;
+    .titulo {
+      cursor: pointer;
+      font-size: 3rem;
+      font-family: "Cherry Cream Soda", system-ui;
+      font-weight: 500;
+      font-style: normal;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.wallpaper{    
+    // background-image: url('../../../assets/img/background.jpg');
+    // background-image: url('https://mcdn.wallpapersafari.com/medium/76/77/rN3Jcj.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 90vh !important;
+    ion-text{
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+}
+
+#titulo__container__cards{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.container__sobre{
+    background-color: var(--ion-color-primary);
+
+}
+
+/*
+
+grid 
+
+
+flex
+display flex
+flex direction row
+
+justifi content around
+align item center
+
+*/
