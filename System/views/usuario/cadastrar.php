@@ -22,7 +22,6 @@ $data = json_decode(file_get_contents("php://input"));
 try {
     $nome = htmlspecialchars(trim($data->nome));
     $email = htmlspecialchars(trim($data->email));
-    $telefone = htmlspecialchars(trim($data->telefone));
     $senha = htmlspecialchars(trim($data->senha));
     
     // Verificar se o e-mail já está cadastrado
@@ -51,11 +50,10 @@ try {
         exit;
     }
 
-    $sqlInsert = "INSERT INTO usuario (nome, email, telefone, senha) VALUES (:nome, :email, :telefone, :senha)";
+    $sqlInsert = "INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)";
     $stmt = $conn->prepare($sqlInsert);
     $stmt->bindValue(':nome', $nome);
     $stmt->bindValue(':email', $email);
-    $stmt->bindValue(':telefone', $telefone);
     $stmt->bindValue(':senha', $senha);
  
 

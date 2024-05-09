@@ -34,7 +34,6 @@ export class PerfilPage implements OnInit {
         console.log("user", response)
         this.usuario = response;
         this.usuario.imagem = this.Usuario.pegarImagem(this.usuario!.imagem)
-        this.listagemArduino(this.id_usuario)
       },
       (badResponde: HttpErrorResponse) => {
         console.log(badResponde);
@@ -43,111 +42,8 @@ export class PerfilPage implements OnInit {
     );
   }
 
-  listagemArduino(id_usuario: number) {
-    this.Arduino.listarArduinoUsuarioSensor(id_usuario).subscribe(
-      response => {
-        console.log("arduinos", response)
-        this.arduinos = response
-        this.loading = false;
-        this.quantidade_arduinos = this.arduinos.length
-        const tipo = 'success';
-        const mensagem = 'Listagem dos arduínos concluida';
-        this.Toast.mostrarToast(tipo, mensagem);
-      },
-      error => {
-        console.error('Erro ao cadastrar os dados:', error);
-        this.loading = false;
 
-        const tipo = 'danger';
-        const mensagem = 'Algo deu errado!';
-        this.Toast.mostrarToast(tipo, mensagem);
-      }
-    );
-  }
-
-  async mostrarAlertaExcluirArduino(id: number) {
-    const alert = await this.alertController.create({
-      header: 'Alerta!',
-      message: 'Deseja excluir o arduíno?',
-      buttons: [
-        {
-          text: 'Não',
-          role: 'cancel',
-          handler: () => {
-            console.log('Ação cancelada');
-          }
-        },
-        {
-          text: 'Sim',
-          handler: () => {
-            this.excluirArduino(id)
-          }
-        }
-      ],
-    });
-
-    await alert.present();
-  }
-
-  excluirArduino(id: number) {
-    this.Arduino.excluirArduino(id).subscribe(
-      response => {
-        const tipo = 'success';
-        const mensagem = 'Arduíno excluído com sucesso';
-        location.reload();
-
-        this.Toast.mostrarToast(tipo, mensagem);
-      },
-      error => {
-        console.error('Erro ao excluir os dados:', error);
-        const tipo = 'danger';
-        const mensagem = 'Erro ao excluir arduíno!';
-        this.Toast.mostrarToast(tipo, mensagem);
-      }
-    );
-  }
-
-  async mostrarAlertaExcluirSensor(id: number) {
-    const alert = await this.alertController.create({
-      header: 'Alerta!',
-      message: 'Deseja excluir o sensor?',
-      buttons: [
-        {
-          text: 'Não',
-          role: 'cancel',
-          handler: () => {
-            console.log('Ação cancelada');
-          }
-        },
-        {
-          text: 'Sim',
-          handler: () => {
-            this.excluirSensor(id)
-          }
-        }
-      ],
-    });
-
-    await alert.present();
-  }
-
-  excluirSensor(id: number) {
-    this.Sensor.excluirSensor(id).subscribe(
-      response => {
-        const tipo = 'success';
-        const mensagem = 'Sensor excluído com sucesso';
-        location.reload();
-
-        this.Toast.mostrarToast(tipo, mensagem);
-      },
-      error => {
-        console.error('Erro ao excluir os dados:', error);
-        const tipo = 'danger';
-        const mensagem = 'Erro ao excluir o sensor!';
-        this.Toast.mostrarToast(tipo, mensagem);
-      }
-    );
-  }
+  
 
   arqsSelecionados: File[] = [];
   nomeArqSelecionado?: string

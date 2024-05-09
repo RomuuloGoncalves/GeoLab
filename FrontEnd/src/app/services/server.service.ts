@@ -8,8 +8,7 @@ import { Observable } from 'rxjs';
 })
 
 export class ServerService {
-  // private apiUrl = 'http://localhost/Projeto-Integrador/System';
-  private apiUrl = 'https://amused-hopelessly-tetra.ngrok-free.app/Projeto-Integrador/System';
+  private apiUrl = 'https://amused-hopelessly-tetra.ngrok-free.app/GeoLab/System';
   
 
   constructor(private http: HttpClient, private Cookie: CookieService) { }

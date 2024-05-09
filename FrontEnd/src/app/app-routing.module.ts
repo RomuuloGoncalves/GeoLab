@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LogedGuard } from './auth/loged.guard';
 import { RedirectGuard } from './auth/redirect.guard';
+import { ViewComponent } from './components/ra/view/view.component';
 
 const routes: Routes = [
   {
@@ -16,17 +17,17 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-    // canActivate: [RedirectGuard]
+    canActivate: [RedirectGuard]
   },
   {
     path: 'cadastro',
     loadChildren: () => import('./pages/cadastro/cadastro.module').then( m => m.CadastroPageModule),
-    // canActivate: [RedirectGuard]
+    canActivate: [RedirectGuard]
   },
   {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),
-    // canActivate: [LogedGuard]
+    canActivate: [LogedGuard]
   },
   {
     path: 'privacidade',
@@ -43,7 +44,13 @@ const routes: Routes = [
   {
     path: 'listagem',
     loadChildren: () => import('./pages/listagem/listagem.module').then( m => m.ListagemPageModule)
+  },
+  { path: 'webview', component: ViewComponent },
+  {
+    path: 'realidade-aumentada/:link',
+    loadChildren: () => import('./pages/realidade-aumentada/realidade-aumentada.module').then( m => m.RealidadeAumentadaPageModule)
   }
+
 ];
 
 @NgModule({

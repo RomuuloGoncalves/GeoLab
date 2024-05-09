@@ -32,17 +32,15 @@ try {
 
         $nome = htmlspecialchars(trim($data->nome));
         $email = htmlspecialchars(trim($data->email));
-        $telefone = htmlspecialchars(trim($data->telefone));
         $senha = htmlspecialchars(trim($data->senha));
 
-        $update_serv = "UPDATE `usuario` SET nome = :nome, email = :email, telefone = :telefone, senha = :senha
+        $update_serv = "UPDATE `usuario` SET nome = :nome, email = :email, senha = :senha
         WHERE id_usuario = :id";
 
         $update_stmt = $conn->prepare($update_serv);
 
         $update_stmt->bindValue(':nome', $nome);
         $update_stmt->bindValue(':email', $email);
-        $update_stmt->bindValue(':telefone', $telefone);
         $update_stmt->bindValue(':senha', $senha);
         $update_stmt->bindValue(':id', $id);
 

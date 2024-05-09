@@ -3,7 +3,7 @@
 date_default_timezone_set('America/Sao_Paulo');
 
 $host = "localhost"; // endereço do servidor
-$database = "projetoIntegrador"; // nome do banco de dados
+$database = "geolab"; // nome do banco de dados
 $usuario = "romulo"; // usuário do MySQL
 $senha = "romulo123"; // senha do MySQL
 

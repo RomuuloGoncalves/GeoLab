@@ -1,0 +1,5 @@
+<app-loading [loading]="loading"></app-loading>
+
+<ng-container *ngIf="linkFigura">
+    <iframe [src]="safeUrl" width="100%" height="100%" frameborder="0" allowfullscreen allow="camera" (load)="onLoad()"></iframe>
+</ng-container>
