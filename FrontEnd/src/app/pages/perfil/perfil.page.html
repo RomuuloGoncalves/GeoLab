@@ -5,7 +5,7 @@
       <ion-row class="ion-justify-content-center ion-align-items-center">
         <ion-col size="auto" id="trigger-button">
           <ion-avatar>
-            <ion-img alt="Avatar" src="{{this.usuario?.imagem}}" ></ion-img>
+            <ion-img alt="Avatar" src="{{this.usuario?.imagem}}"></ion-img>
           </ion-avatar>
         </ion-col>
 
@@ -19,7 +19,7 @@
             <ion-col size="12">
 
               <ion-label>
-                {{this.quantidade_arduinos}} dispositivos
+                {{this.usuario?.pontos}} PTS
               </ion-label>
             </ion-col>
           </ion-row>
@@ -61,8 +61,20 @@
     </ion-col>
   </ion-row>
 
-  <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-vertical ">
-  
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="11" class="lista ion-padding">
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" sizeMd="4">
+          <ion-button size="large" color="secondary"  expand="block"[routerLink]="['/perguntas']" routerDirection="back">Responder Questões</ion-button> 
+        </ion-col>
+        <ion-col size="12" sizeMd="4">
+          <ion-button size="large" color="secondary" expand="block" [routerLink]="['/listagem']" routerDirection="back">Explorar Formas</ion-button>
+        </ion-col>
+        <ion-col size="12" sizeMd="4">
+          <ion-button size="large" color="secondary" expand="block" [routerLink]="['/ranking']" routerDirection="back">Ranking</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
   </ion-row>
   <!-- <app-footer></app-footer> -->
 </ion-content>

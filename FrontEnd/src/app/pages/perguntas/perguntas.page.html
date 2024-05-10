@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+  <app-header>c</app-header>
+
+  <app-loading [loading]="loading"></app-loading>
+
+  <ion-row class="ion-align-items-center ion-justify-content-center ion-margin ">
+    <ng-container *ngFor="let pergunta of perguntas; index as indexPergunta">
+      <ion-col size="12" sizeMd="10">
+        <ion-row class="pergunta__container ion-padding ion-align-items-center ion-justify-content-center">
+          <ion-col size="11">
+            <ion-row class="titulo ion-padding ion-justify-content-center ion-align-items-center">
+              <ion-label>
+                {{this.pergunta!.enunciado}}
+              </ion-label>
+            </ion-row>
+          </ion-col>
+
+          <ion-col size="11">
+            <ion-row class="ion-align-items-center ion-justify-content-center">
+              <ng-container *ngFor="let opcoes of this.pergunta.opcoes">
+                <ion-col size="11" sizeMd="6">
+                  <ion-row>
+                    <ion-label class="alternativas" expand="block" size="large" color="tertiary" (click)="verificarPergunta(opcoes.correta, indexPergunta)" fill="outline">
+                      {{opcoes.descricao}}
+                    </ion-label>
+                  </ion-row>
+                  <!-- <ion-button expand="block" size="large" color="tertiary" (click)="verificarPergunta(opcoes.correta, indexPergunta)" fill="outline">
+                    {{opcoes.descricao}}
+                  </ion-button> -->
+                </ion-col>
+              </ng-container>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ng-container>
+
+  </ion-row>
+  <app-footer></app-footer>
+</ion-content>

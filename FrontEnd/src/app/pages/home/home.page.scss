@@ -20,16 +20,13 @@
 
 }
 
-/*
 
-grid 
-
-
-flex
-display flex
-flex direction row
-
-justifi content around
-align item center
-
-*/
+@media (max-width: 600px) {
+    .wallpaper{    
+ 
+        ion-text{
+            text-align: justify;
+            font-size: 1.7rem;
+        }
+    }
+}

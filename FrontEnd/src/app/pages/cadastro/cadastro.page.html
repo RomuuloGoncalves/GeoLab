@@ -22,6 +22,13 @@
             </ion-row>
 
             <ion-row class="input-container">
+              <ion-select ngModel name="funcao" aria-label="Função:" interface="popover" placeholder="Informe sua função">
+                  <ion-select-option value="professor">Professor</ion-select-option>
+                  <ion-select-option value="aluno">Aluno</ion-select-option>
+              </ion-select>
+            </ion-row>
+
+            <ion-row class="input-container">
               <ion-input ngModel name="senha" errorText="Deve ser maior que 8 caracteres" minlength="8" label="Senha"
                 type="password" required></ion-input>
               <!-- <ion-text class="erro" color="danger">erro</ion-text> -->

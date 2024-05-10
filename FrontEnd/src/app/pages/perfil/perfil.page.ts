@@ -27,7 +27,7 @@ export class PerfilPage implements OnInit {
   usuario!: any
   nome_usuario?: string = this.Usuario.nome_usuario
   id_usuario: any = (this.Usuario.id_usuario)
-  quantidade_arduinos = 0
+  quantidade_pontos = 0
   private carregarPerfil() {
     this.Usuario.pegarUsuario(this.Usuario.id_usuario).subscribe(
       (response: any) => {
@@ -41,9 +41,7 @@ export class PerfilPage implements OnInit {
       }
     );
   }
-
-
-  
+ 
 
   arqsSelecionados: File[] = [];
   nomeArqSelecionado?: string

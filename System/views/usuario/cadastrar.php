@@ -23,6 +23,7 @@ try {
     $nome = htmlspecialchars(trim($data->nome));
     $email = htmlspecialchars(trim($data->email));
     $senha = htmlspecialchars(trim($data->senha));
+    $funcao = htmlspecialchars(trim($data->funcao));
     
     // Verificar se o e-mail já está cadastrado
     $sqlCheckEmail = "SELECT COUNT(*) AS total FROM usuario WHERE email = :email";
@@ -50,10 +51,11 @@ try {
         exit;
     }
 
-    $sqlInsert = "INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)";
+    $sqlInsert = "INSERT INTO usuario (nome, email, funcao, senha) VALUES (:nome, :email, :funcao, :senha)";
     $stmt = $conn->prepare($sqlInsert);
     $stmt->bindValue(':nome', $nome);
     $stmt->bindValue(':email', $email);
+    $stmt->bindValue(':funcao', $funcao);
     $stmt->bindValue(':senha', $senha);
  
 

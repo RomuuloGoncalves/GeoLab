@@ -9,14 +9,15 @@
           <ion-row class="ion-justify-content-center ion-align-items-center">
             <ion-label>EXPLORAR</ion-label>
           </ion-row>
-          <ion-searchbar color="light" value=""></ion-searchbar>
+          <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+
         </ion-col>
       </ion-row>
     </ion-col>
   </ion-row>
 
   <ion-row class="ion-justify-content-center ion-align-items-center">
-    <ng-container *ngFor="let forma of matrizFormas">
+    <ng-container *ngFor="let forma of results">
       <ion-col size="12" sizeSm="6" sizeMd="4" sizeLg="3">
         <ion-card>
           <ion-img alt="Silhouette of mountains" src="../../../assets/img/formas/demo/{{this.forma[2]}}" ></ion-img>

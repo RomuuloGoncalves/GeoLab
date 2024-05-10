@@ -48,7 +48,19 @@ const routes: Routes = [
   { path: 'webview', component: ViewComponent },
   {
     path: 'realidade-aumentada/:link',
-    loadChildren: () => import('./pages/realidade-aumentada/realidade-aumentada.module').then( m => m.RealidadeAumentadaPageModule)
+    loadChildren: () => import('./pages/realidade-aumentada/realidade-aumentada.module').then( m => m.RealidadeAumentadaPageModule),
+    canActivate: [LogedGuard]
+  },
+  {
+    path: 'perguntas',
+    loadChildren: () => import('./pages/perguntas/perguntas.module').then( m => m.PerguntasPageModule),
+    canActivate: [LogedGuard]
+  },
+  {
+    path: 'ranking',
+    loadChildren: () => import('./pages/ranking/ranking.module').then( m => m.RankingPageModule),
+    canActivate: [LogedGuard]
+
   }
 
 ];

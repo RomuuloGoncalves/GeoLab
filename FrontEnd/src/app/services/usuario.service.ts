@@ -25,8 +25,16 @@ export class UsuarioService {
 
   public atualizarDados(dados: any): Observable<any> {
     // return this.http.post<any>(this.apiUrl, dados);
-    
+
     return this.Server.put('/views/usuario/atualizar.php', dados);
+  }
+
+  public atualizarPontos(dados: any): Observable<any> {
+    return this.Server.put('/views/usuario/mudar_pontos.php', dados);
+  }
+
+  public coletarPontos(id: any): Observable<any> {
+    return this.Server.get(`/views/usuario/pegar_pontos.php?id=${id}`);
   }
 
   public alterarImagem(data: any) {
@@ -45,13 +53,17 @@ export class UsuarioService {
     return this.Server.get(`/views/usuario/usuario_id.php?id=${id}`);
   }
 
+  public pegarRanking(): Observable<any> {
+    return this.Server.get(`/views/usuario/ranking.php`);
+  }
+
   public limparToken() {
     this.Cookie.delete('token');
     this.Cookie.delete('nome_usuario');
     this.Cookie.delete('id_usuario');
   }
 
-  public pegarImagem(produto:any){
+  public pegarImagem(produto: any) {
     return this.Server.imagem(produto)
   }
 
