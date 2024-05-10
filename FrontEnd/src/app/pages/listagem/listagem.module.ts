@@ -8,6 +8,7 @@ import { ListagemPageRoutingModule } from './listagem-routing.module';
 
 import { ListagemPage } from './listagem.page';
 import { HeaderModule } from 'src/app/components/common/header/header.module';
+import { LoadingModule } from 'src/app/components/common/loading/loading.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { HeaderModule } from 'src/app/components/common/header/header.module';
     FormsModule,
     IonicModule,
     ListagemPageRoutingModule,
-    HeaderModule
+    HeaderModule,
+    LoadingModule
   ],
   declarations: [ListagemPage]
 })

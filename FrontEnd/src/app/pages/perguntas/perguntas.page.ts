@@ -20,8 +20,9 @@ export class PerguntasPage implements OnInit {
 
   loading: boolean = true
   perguntas: any = []
+  perguntasAleatorias: any = []
   pontos!: number
-  id_usuario?: number = this.Usuario.id_usuario 
+  id_usuario?: number = this.Usuario.id_usuario
 
 
   public coletarPerguntas() {
@@ -35,6 +36,8 @@ export class PerguntasPage implements OnInit {
         const tipo = 'success';
         const mensagem = 'Perguntas listadas com sucesso';
         this.Toast.mostrarToast(tipo, mensagem);
+        this.pegarPerguntasAleatorias(this.perguntas)
+        console.log(this.perguntasAleatorias)
       },
       error => {
         console.error('Erro ao coletar os dados:', error);
@@ -45,30 +48,47 @@ export class PerguntasPage implements OnInit {
         this.Toast.mostrarToast(tipo, mensagem);
       }
     );
-
   }
+
+
+  pegarPerguntasAleatorias(perguntas: any[]){
+    const perguntasAleatorias: any[] = [];
+    const indicesUtilizados: { [key: number]: boolean } = {};
+
+    while (perguntasAleatorias.length < 10) {
+      const indiceAleatorio: number = Math.floor(Math.random() * perguntas.length);
+
+      if (!indicesUtilizados[indiceAleatorio]) {
+        perguntasAleatorias.push(perguntas[indiceAleatorio]);
+        indicesUtilizados[indiceAleatorio] = true;
+      }
+    }
+
+    this.perguntasAleatorias = perguntasAleatorias;
+  }
+
 
   public verificarPergunta(correta: boolean, index: number) {
     let tipo = 'danger';
     let mensagem = 'Que pena. Tente mais uma vez.';
-    
-    if (correta) {
-       tipo = 'success';
-       mensagem = 'Parabéns. Você acertou!!!!';
 
-       this.removerQuestao(index)
-       this.pontos = this.pontos + 2
-       this.somarPontoUsuario(this.pontos)
+    if (correta) {
+      tipo = 'success';
+      mensagem = 'Parabéns. Você acertou!!!!';
+
+      this.removerQuestao(index)
+      this.pontos = this.pontos + 2
+      this.somarPontoUsuario(this.pontos)
     }
 
     this.Toast.mostrarToast(tipo, mensagem);
   }
 
-  public removerQuestao(index: number){
-    this.perguntas.splice(index, 1);
+  public removerQuestao(index: number) {
+    this.perguntasAleatorias.splice(index, 1);
   }
 
-  public recuperarPontos(){
+  public recuperarPontos() {
     this.Usuario.coletarPontos(this.id_usuario).subscribe(
       response => {
         console.log(response)
@@ -80,7 +100,7 @@ export class PerguntasPage implements OnInit {
     );
   }
 
-  public somarPontoUsuario(number:number){
+  public somarPontoUsuario(number: number) {
     console.log(number)
     const atualizar = {
       "id": this.id_usuario,

@@ -4,37 +4,77 @@
   <app-loading [loading]="loading"></app-loading>
 
   <ion-row class="ion-align-items-center ion-justify-content-center ion-margin ">
-    <ng-container *ngFor="let pergunta of perguntas; index as indexPergunta">
-      <ion-col size="12" sizeMd="10">
-        <ion-row class="pergunta__container ion-padding ion-align-items-center ion-justify-content-center">
-          <ion-col size="11">
-            <ion-row class="titulo ion-padding ion-justify-content-center ion-align-items-center">
-              <ion-label>
-                {{this.pergunta!.enunciado}}
+    <ion-col size="12" sizeMd="10">
+      <ion-button expand="block" size="large" color="secondary" (click)="pegarPerguntasAleatorias(this.perguntas)">
+        Atualizar Questões
+      </ion-button>
+    </ion-col>
+    <ng-container *ngIf="perguntasAleatorias.length > 0; else sem_perguntas">
+      <ng-container *ngFor="let pergunta of perguntasAleatorias; index as indexPergunta">
+        <ion-col size="12" sizeMd="10">
+          <ion-row class="pergunta__container ion-padding ion-align-items-center ion-justify-content-center">
+            <!-- <ion-col size="12">
+              <ion-label class="numero__pergunta">
+                Questão - {{this.indexPergunta + 1}}
               </ion-label>
-            </ion-row>
-          </ion-col>
+            </ion-col> -->
+            <ion-col size="11">
+              <ion-row class="titulo ion-padding ion-justify-content-center ion-align-items-center">
+                <ion-label>
+                  {{this.pergunta!.enunciado}}
+                </ion-label>
+              </ion-row>
+            </ion-col>
 
-          <ion-col size="11">
-            <ion-row class="ion-align-items-center ion-justify-content-center">
-              <ng-container *ngFor="let opcoes of this.pergunta.opcoes">
-                <ion-col size="11" sizeMd="6">
-                  <ion-row>
-                    <ion-label class="alternativas" expand="block" size="large" color="tertiary" (click)="verificarPergunta(opcoes.correta, indexPergunta)" fill="outline">
-                      {{opcoes.descricao}}
-                    </ion-label>
-                  </ion-row>
-                  <!-- <ion-button expand="block" size="large" color="tertiary" (click)="verificarPergunta(opcoes.correta, indexPergunta)" fill="outline">
+            <ion-col size="11">
+              <ion-row class="ion-align-items-center ion-justify-content-center">
+                <ng-container *ngFor="let opcoes of this.pergunta.opcoes">
+                  <ion-col size="11" sizeMd="6">
+                    <ion-row>
+                      <ion-label class="alternativas" expand="block" size="large" color="tertiary"
+                        (click)="verificarPergunta(opcoes.correta, indexPergunta)" fill="outline">
+                        {{opcoes.descricao}}
+                      </ion-label>
+                    </ion-row>
+                    <!-- <ion-button expand="block" size="large" color="tertiary" (click)="verificarPergunta(opcoes.correta, indexPergunta)" fill="outline">
                     {{opcoes.descricao}}
                   </ion-button> -->
-                </ion-col>
-              </ng-container>
-            </ion-row>
-          </ion-col>
-        </ion-row>
-      </ion-col>
+                  </ion-col>
+                </ng-container>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ng-container>
     </ng-container>
 
+    <ng-template #sem_perguntas>
+      <ion-row class="ion-align-items-center ion-justify-content-center">
+        <ion-col size="12">
+          <ion-row class="ion-align-items-center ion-justify-content-center">
+            <ion-label class="sem__perguntas">
+              Não há mais perguntas para responder, tente gerar mais
+            </ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ng-template>
+
+    <ion-col size="12" sizeMd="10">
+      <ion-row>
+        <ion-col size="12" sizeMd="6">
+          <ion-button expand="block" size="large" color="warning" (click)="pegarPerguntasAleatorias(this.perguntas)">
+            Gerar Questões
+          </ion-button>
+        </ion-col>
+        <ion-col size="12" sizeMd="6">
+          <ion-button expand="block" size="large" color="danger" [routerLink]="['/perfil']" routerDirection="back">
+            Voltar ao Perfil
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
   </ion-row>
+
   <app-footer></app-footer>
 </ion-content>

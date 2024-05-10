@@ -34,6 +34,7 @@ export class PerfilPage implements OnInit {
         console.log("user", response)
         this.usuario = response;
         this.usuario.imagem = this.Usuario.pegarImagem(this.usuario!.imagem)
+        console.log(this.usuario.imagem)
       },
       (badResponde: HttpErrorResponse) => {
         console.log(badResponde);
