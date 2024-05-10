@@ -43,7 +43,7 @@
   <ion-header class="header__principal ">
     <ion-row class="ion-align-items-center ion-justify-content-between ion-padding-vertical">
       <ion-col size="auto">
-       <ion-label class="titulo" [routerLink]="['../']"  routerDirection="back">GeoLab</ion-label>
+       <ion-label class="titulo" [routerLink]="['']"  routerDirection="back">GeoLab</ion-label>
       </ion-col>
 
       <ion-col size="auto" *ngIf="!this.logedIn">
@@ -53,7 +53,7 @@
 
       <ion-col size="auto" *ngIf="this.logedIn">
         <ion-row>
-          <ion-chip [routerLink]="['../perfil']"  routerDirection="back">
+          <ion-chip [routerLink]="['/perfil']"  routerDirection="back">
             <ion-avatar>
               <ion-img alt="avatar" src="{{this.usuario?.imagem}}"></ion-img>
             </ion-avatar>
