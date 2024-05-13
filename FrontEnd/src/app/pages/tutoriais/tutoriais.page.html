@@ -1,0 +1,147 @@
+<ion-content [fullscreen]="true">
+  <app-header></app-header>
+
+  <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-vertical ">
+
+    <ion-col size="11" class="lista ion-padding">
+      <ion-row class="ion-margin-vertical">
+
+        <ion-label class="titulo">
+          Qual a sua dúvida?
+        </ion-label>
+      </ion-row>
+      <ion-accordion-group multiple="true" [value]="['Listagem', 'Realidade Aumentada']">
+        <ion-accordion value="Listagem">
+          <ion-item slot="header" color="primary shade">
+            <ion-label>Explorar</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-row>
+              <ion-text>
+                <p>Bem-vindo à página de exploração! Esta página é projetada para ajudá-lo a expandir seu conhecimento e
+                  criatividade, explorando uma variedade de formas em uma interface intuitiva e interativa.</p>
+
+                <p>Para começar sua jornada de descoberta, você encontrará um campo de pesquisa no centro da tela.
+                  Utilize este campo para inserir palavras-chave relacionadas às formas que você deseja explorar. A
+                  pesquisa é dinâmica e irá filtrar os resultados à medida que você digita, tornando mais fácil
+                  encontrar exatamente o que você está procurando.</p>
+
+                <p>Abaixo da barra de pesquisa, uma grade de cartões aguarda por você. Cada cartão representa uma forma
+                  disponível para exploração. As formas são apresentadas com uma imagem representativa e um título
+                  descritivo, permitindo uma rápida identificação e seleção.</p>
+
+                <p>Para mergulhar mais fundo em uma forma específica, simplesmente clique no botão "Acessar" abaixo do
+                  cartão correspondente. Isso o conduzirá a uma página dedicada onde você poderá explorar a forma em
+                  detalhes, talvez até mesmo em realidade aumentada, dependendo das opções disponíveis.</p>
+
+                <p>Portanto, aproveite esta oportunidade para expandir seus horizontes e estimular sua criatividade
+                  enquanto explora a variedade de formas disponíveis. Que esta jornada de exploração seja repleta de
+                  descobertas fascinantes e inspiradoras!</p>
+              </ion-text>
+
+            </ion-row>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="Perfil">
+          <ion-item slot="header" color="primary shade">
+            <ion-label>Perfil</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-row>
+              <ion-text>
+                <p>Bem-vindo à sua página de perfil! Aqui você pode personalizar sua experiência e interagir com a
+                  comunidade.</p>
+
+                <p>No topo da página, você encontrará detalhes do seu perfil, incluindo sua imagem, nome de usuário e
+                  pontuação de pontos. Clicando na sua imagem, você pode acessar opções adicionais, como alterar sua
+                  foto de perfil.</p>
+
+                <p>Abaixo do perfil, você tem acesso a diferentes funcionalidades:</p>
+
+                <ul>
+                  <li>Responder Questões: Participe e teste seu conhecimento respondendo a perguntas.</li>
+                  <li>Explorar Formas: Descubra e aprenda sobre diferentes formas.</li>
+                  <li>Ranking: Veja como você se classifica em relação aos outros membros da comunidade.</li>
+                </ul>
+
+                <p>Sinta-se à vontade para explorar todas as opções disponíveis e aproveitar ao máximo sua experiência
+                  na plataforma!</p>
+              </ion-text>
+
+            </ion-row>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="Perguntas">
+          <ion-item slot="header" color="primary shade">
+            <ion-label>Perguntas</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-row>
+              <ion-text>
+                <p>Bem-vindo à seção de perguntas! Aqui, você pode testar seus conhecimentos respondendo a diversas
+                  perguntas.</p>
+
+                <p>Para começar, você pode atualizar as perguntas disponíveis clicando no botão "Atualizar Questões".
+                  Isso trará novas perguntas aleatórias para você responder.</p>
+
+
+                <p>Quando terminar de responder as perguntas ou quiser sair desta seção, você pode voltar para o seu
+                  perfil clicando no botão "Voltar ao Perfil".</p>
+              </ion-text>
+
+            </ion-row>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="Ranking">
+          <ion-item slot="header" color="primary shade">
+            <ion-label>Ranking</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-row>
+              <ion-text>
+                <p>Bem-vindo ao Ranking de Pontuação! Aqui você pode ver a classificação dos usuários com base na
+                  pontuação acumulada.</p>
+
+                <p>No topo da página, você encontrará o título "Ranking de pontuação", indicando o propósito desta
+                  seção.</p>
+
+                <p>A lista abaixo exibe os usuários ordenados de acordo com a pontuação obtida, do maior para o menor
+                  número de pontos.</p>
+
+                <p>Cada entrada na lista apresenta o nome do usuário e sua respectiva pontuação. Uma imagem de avatar
+                  está associada a cada usuário para uma identificação visual rápida.</p>
+
+                <p>Sinta-se à vontade para explorar o ranking e verificar como você se compara aos outros membros da
+                  comunidade em termos de pontuação!</p>
+              </ion-text>
+
+            </ion-row>
+          </div>
+        </ion-accordion>
+        <ion-accordion value="Realidade Aumentada">
+          <ion-item slot="header" color="primary shade">
+            <ion-label>Realidade Aumentada</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-row>
+              <ion-text>
+                <p>Bem-vindo à página de Realidade Aumentada!</p>
+
+                <p>Nesta página, você pode visualizar figuras em 3D usando a câmera do seu dispositivo. Para começar,
+                  aponte sua câmera para o marcador de Realidade Aumentada.</p>
+
+                <p>Enquanto a câmera estiver apontada para o marcador, a figura correspondente será projetada em
+                  realidade aumentada na tela do seu dispositivo.</p>
+
+                <p>Por favor, aguarde um momento enquanto a página carrega e a conexão com a câmera é estabelecida. Você
+                  verá a figura assim que estiver pronta para ser visualizada.</p>
+              </ion-text>
+
+            </ion-row>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-col>
+  </ion-row>
+  <app-footer></app-footer>
+</ion-content>

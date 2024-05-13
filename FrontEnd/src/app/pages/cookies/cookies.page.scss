@@ -1,0 +1,30 @@
+h1 {
+	color: var(--ion-color-secondary)
+}
+
+h3 {
+	color: var(--ion-color-secondary)
+}
+
+ol {
+	li {
+		color: var(--ion-color-tertiary);
+		font-size: 1.6rem;
+	}
+}
+
+ul {
+	li {
+		color: var(--ion-color-black);
+		font-size: 1.1rem;
+		line-height: 1.5rem;
+	}
+}
+
+p {
+	font-size: 1.1rem;
+	font-family: 'arial';
+	color: #000;
+	line-height: 1.5rem;
+	text-align: justify;
+}

@@ -61,6 +61,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/ranking/ranking.module').then( m => m.RankingPageModule),
     canActivate: [LogedGuard]
 
+  },
+  {
+    path: 'tutoriais',
+    loadChildren: () => import('./pages/tutoriais/tutoriais.module').then( m => m.TutoriaisPageModule)
   }
 
 ];

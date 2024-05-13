@@ -13,11 +13,6 @@
       <ng-container *ngFor="let pergunta of perguntasAleatorias; index as indexPergunta">
         <ion-col size="12" sizeMd="10">
           <ion-row class="pergunta__container ion-padding ion-align-items-center ion-justify-content-center">
-            <!-- <ion-col size="12">
-              <ion-label class="numero__pergunta">
-                Questão - {{this.indexPergunta + 1}}
-              </ion-label>
-            </ion-col> -->
             <ion-col size="11">
               <ion-row class="titulo ion-padding ion-justify-content-center ion-align-items-center">
                 <ion-label>
@@ -36,9 +31,6 @@
                         {{opcoes.descricao}}
                       </ion-label>
                     </ion-row>
-                    <!-- <ion-button expand="block" size="large" color="tertiary" (click)="verificarPergunta(opcoes.correta, indexPergunta)" fill="outline">
-                    {{opcoes.descricao}}
-                  </ion-button> -->
                   </ion-col>
                 </ng-container>
               </ion-row>
