@@ -10,32 +10,33 @@
         <ion-col>
           <form #cadastroForm="ngForm" (ngSubmit)="this.cadastrar()">
             <ion-row class="input-container">
-              <ion-input ngModel name="nome" label="Nome" errorText="Nome é obrigatório" type="text"
+              <ion-input ngModel name="nome" label="Nome" errorText="Nome é obrigatório"  fill="outline" type="text"
                 required></ion-input>
               <!-- <ion-text class="erro" color="danger">erro</ion-text> -->
             </ion-row>
 
             <ion-row class="input-container">
-              <ion-input ngModel name="email" errorText="Formato de Email inválido" label="Email" type="email"
+              <ion-input ngModel name="email" errorText="Formato de Email inválido"  fill="outline" label="Email" type="email"
                 required></ion-input>
               <!-- <ion-text class="erro" color="danger">erro</ion-text> -->
             </ion-row>
 
             <ion-row class="input-container">
-              <ion-select ngModel name="funcao" aria-label="Função:" interface="popover" placeholder="Informe sua função">
-                  <ion-select-option value="professor">Professor</ion-select-option>
-                  <ion-select-option value="aluno">Aluno</ion-select-option>
+              <ion-select ngModel fill="outline" name="funcao" aria-label="Função:" interface="popover"
+                placeholder="Informe sua função">
+                <ion-select-option value="professor">Professor</ion-select-option>
+                <ion-select-option value="aluno">Aluno</ion-select-option>
               </ion-select>
             </ion-row>
 
             <ion-row class="input-container">
-              <ion-input ngModel name="senha" errorText="Deve ser maior que 8 caracteres" minlength="8" label="Senha"
+              <ion-input  fill="outline" ngModel name="senha" errorText="Deve ser maior que 8 caracteres" minlength="8" label="Senha"
                 type="password" required></ion-input>
               <!-- <ion-text class="erro" color="danger">erro</ion-text> -->
             </ion-row>
 
             <ion-row class="input-container">
-              <ion-input ngModel errorText="Senhas não conferem invalida" name="confirmarPassword"
+              <ion-input ngModel  fill="outline" errorText="Senhas não conferem invalida" name="confirmarPassword"
                 label="Confirmar Senha" type="password" required
                 pattern="{{ this.cadastroForm.form.value.senha }}"></ion-input>
             </ion-row>

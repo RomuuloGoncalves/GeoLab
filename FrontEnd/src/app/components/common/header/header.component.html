@@ -63,10 +63,8 @@
       </ion-col>
 
       <ion-col size="auto" *ngIf="!this.logedIn">
-        <ion-button fill="outline" size="large" color="tertiary" [routerLink]="['../cadastro']"
-          routerDirection="back">Cadastre-se</ion-button>
-        <ion-button fill="solid" size="large" color="tertiary" [routerLink]="['../login']"
-          routerDirection="back">Login</ion-button>
+        <!-- <ion-button fill="outline" size="large" color="tertiary" [routerLink]="['../cadastro']" routerDirection="back">Cadastre-se</ion-button> -->
+        <ion-button fill="solid" size="large" color="tertiary" [routerLink]="['../login']" routerDirection="back">Entrar</ion-button>
       </ion-col>
 
       <ion-col size="auto" *ngIf="this.logedIn">

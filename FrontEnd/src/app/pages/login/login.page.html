@@ -10,11 +10,11 @@
         <ion-col>
           <form #loginForm="ngForm" (ngSubmit)="this.login()">
             <ion-row class="input-container">
-              <ion-input ngModel required name="email" helperText=" " label="Email" type="email"></ion-input>
+              <ion-input ngModel required name="email" helperText=" " fill="outline" label="Email" type="email"></ion-input>
               <!-- <ion-text class="erro" color="danger">erros e-mail</ion-text> -->
             </ion-row>
             <ion-row class="input-container">
-              <ion-input ngModel required name="senha" helperText=" " label="Senha" type="password"
+              <ion-input ngModel required name="senha" helperText=" " fill="outline" label="Senha" type="password"
                 errorText="Deve ser maior que 8 caracteres" minlength="8"></ion-input>
               <!-- <ion-text class="erro" color="danger">erros senha</ion-text> -->
             </ion-row>
