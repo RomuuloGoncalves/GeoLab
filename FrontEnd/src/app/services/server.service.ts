@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 export class ServerService {
   private apiUrl = 'https://amused-hopelessly-tetra.ngrok-free.app/GeoLab/System';
   
-
   constructor(private http: HttpClient, private Cookie: CookieService) { }
 
   public post(path: string, data: any | null, url: string = this.apiUrl): Observable<any> {
@@ -59,7 +58,9 @@ export class ServerService {
 
   public upload(path: string, data: any): Observable<any> {
     const token = this.Cookie.get('token');
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const headers = new HttpHeaders()
+    .set('Authorization', `Bearer ${token}`)
+    .set('ngrok-skip-browser-warning', '69420');
 
     return this.http.post(`${this.apiUrl}${path}`, data, { headers });
   }
