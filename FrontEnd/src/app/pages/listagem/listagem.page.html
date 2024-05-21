@@ -20,13 +20,13 @@
     <ng-container *ngFor="let forma of results">
       <ion-col size="12" sizeSm="6" sizeMd="4" sizeLg="3">
         <ion-card>
-          <ion-img alt="Silhouette of mountains" src="../../../assets/img/formas/demo/{{this.forma[2]}}" ></ion-img>
+          <ion-img alt="Silhouette of mountains" src="./assets/img/formas/demo/{{this.forma[2]}}" ></ion-img>
           <ion-card-header>
             <ion-card-title>{{this.forma[0]}}</ion-card-title>
           </ion-card-header>
 
           <ion-card-content>
-            <ion-button routerDirection="back" routerLink="../realidade-aumentada/{{this.forma[1]}}" size="large" expand="block" fill="outline" color="tertiary">
+            <ion-button routerDirection="back" routerLink="/realidade-aumentada/{{this.forma[1]}}" size="large" expand="block" fill="outline" color="tertiary">
               Acessar
             </ion-button>
           </ion-card-content>

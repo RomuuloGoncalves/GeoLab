@@ -14,6 +14,7 @@ ion-header {
   &.header__principal {
     padding: 5px 5px;
     .titulo {
+      mix-blend-mode: multiply;
       cursor: pointer;
       font-size: 3rem;
       font-family: "Cherry Cream Soda", system-ui;

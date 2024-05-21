@@ -10,7 +10,7 @@ CREATE TABLE usuario (
     funcao VARCHAR(50) NOT NULL,
     senha VARCHAR(50) NOT NULL, 
     pontos INT DEFAULT 0, 
-    imagem VARCHAR(250) DEFAULT '.../../../../../assets/img/default/avatar_default.svg'
+    imagem VARCHAR(250) DEFAULT './assets/img/default/avatar_default.svg'
     -- imagem VARCHAR(250) DEFAULT 'https://ionicframework.com/docs/img/demos/avatar.svg'
 );
 

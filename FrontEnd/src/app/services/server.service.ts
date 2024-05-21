@@ -66,7 +66,7 @@ export class ServerService {
   }
 
   public imagem(imagem:any){
-    return (imagem != '.../../../../../assets/img/default/avatar_default.svg' || imagem.trim() == '' || imagem.trim() == null) ? `${this.apiUrl}/public/uploads/imgs/${imagem}` : '.../../../../../assets/img/default/avatar_default.svg'
+    return (imagem != './assets/img/default/avatar_default.svg' || imagem.trim() == '' || imagem.trim() == null) ? `${this.apiUrl}/public/uploads/imgs/${imagem}` : './assets/img/default/avatar_default.svg'
     // return (imagem != 'https://ionicframework.com/docs/img/demos/avatar.svg' || imagem.trim() == '' || imagem.trim() == null) ? `${this.apiUrl}/public/uploads/imgs/${imagem}` : 'https://ionicframework.com/docs/img/demos/avatar.svg'
   }
 }
